@@ -146,10 +146,9 @@ class Tool(ABC):
         ...
 
     @property
-    @abstractmethod
     def parameters(self) -> dict[str, Any]:
-        """JSON Schema for tool parameters."""
-        ...
+        """JSON Schema for tool parameters. Concrete value injected by @tool_parameters."""
+        raise NotImplementedError
 
     @property
     def read_only(self) -> bool:
